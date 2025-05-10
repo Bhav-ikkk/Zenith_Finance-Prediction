@@ -8,7 +8,7 @@ export async function POST(req) {
     return NextResponse.json({ error: 'Missing data' }, { status: 400 });
   }
 
- const savedAmount = parseFloat((amount * 0.05).toFixed(2)); // 5% savings
+ const savedAmount = parseFloat((amount * 0.02).toFixed(2)); // 5% savings
 
   const lockedUntil = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000); // 90 days
 

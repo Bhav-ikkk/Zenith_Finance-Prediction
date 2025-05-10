@@ -27,6 +27,10 @@ export default function Navbar() {
               ➕ Start Gulak
             </Button>
           </Link>
+
+            <Link href="/checker" passHref>
+            <Button color="inherit">Analyzer</Button>
+          </Link>
         </Box>
       </Toolbar>
     </AppBar>

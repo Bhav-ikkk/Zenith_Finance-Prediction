@@ -1,8 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ThemeClientWrapper from './components/ThemeClientWapper';
 
 export default function Home() {
   return (
+    <ThemeClientWrapper>
     <div className={styles.page}>
       <main className={styles.main}>
         <Image
@@ -91,5 +93,6 @@ export default function Home() {
         </a>
       </footer>
     </div>
+    </ThemeClientWrapper>
   );
 }
