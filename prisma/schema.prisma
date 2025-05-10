@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String?
+  name      String?
+  createdAt DateTime @default(now())
+
+  profile       UserProfile?
+  transactions  Transaction[]
+  savings       Saving[]
+  goals         GoalPrediction[]
+}
+
+
+model Transaction {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id]) // ✅ fixed here
+  amount    Float
+  createdAt DateTime @default(now())
+}
+
+model Saving {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id]) // ✅ fixed here
+  amount    Float
+  lockedUntil DateTime
+  isWithdrawn Boolean @default(false)
+  createdAt DateTime @default(now())
+}
+
+
+model UserProfile {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id])
+  incomeRange     String
+  savingsGoal     Float
+  lockPreference  Int      // days
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model GoalPrediction {
+  id             String   @id @default(uuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+  predictedDate  DateTime
+  requiredAmount Float
+  description    String
+  createdAt      DateTime @default(now())
+}
