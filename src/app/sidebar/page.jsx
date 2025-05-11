@@ -54,11 +54,10 @@ const StyledDrawer = styled(Drawer)(({ theme, open }) => ({
 }));
 
 const menuItems = [
-  { text: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
   { text: "Analytics", icon: <AccountBalanceIcon />, path: "/checker" },
-  { text: "Transactions", icon: <ReceiptIcon />, path: "/transactions" },
-  { text: "Investments", icon: <SavingsIcon />, path: "/investments" },
-  { text: "Reports", icon: <PieChartIcon />, path: "/reports" },
+  { text: "Transactions", icon: <ReceiptIcon />, path: "/new" },
+  { text: "Investments", icon: <SavingsIcon />, path: "/invest" },
+  { text: "Reports", icon: <PieChartIcon />, path: "/chat" },
 ];
 
 export default function Sidebar() {

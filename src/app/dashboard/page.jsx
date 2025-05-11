@@ -26,6 +26,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line, Bar, Doughnut } from "react-chartjs-2";
+import ThemeClientWrapper from '../components/ThemeClientWapper';
 
 // Register Chart.js components
 ChartJS.register(
@@ -185,6 +186,7 @@ const chartOptions = {
 const Dashboard = () => {
   const monthlyProgress = (2450 / 3276) * 100;
   return (
+    <ThemeClientWrapper>
     <ThemeProvider theme={theme}>
       <Box
         sx={{
@@ -443,6 +445,7 @@ const Dashboard = () => {
         </Grid>
       </Box>
     </ThemeProvider>
+    </ThemeClientWrapper>
   );
 };
 
