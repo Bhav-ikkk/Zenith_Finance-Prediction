@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 def configure_gemini():
-    api_key = "AIzaSyDiXZ7GlJ2xh316b0zYrNs5XD9TIRZ7uyI"
+    api_key = "YOUR-API-KEY"
     if not api_key:
         logger.error("GEMINI_API_KEY not set")
         raise HTTPException(status_code=500, detail="Gemini API key not configured")
