@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger('matplotlib.font_manager').setLevel(logging.WARNING)
 
 # Configure Gemini API
-GEMINI_API_KEY = "AIzaSyDiXZ7GlJ2xh316b0zYrNs5XD9TIRZ7uyI"
+GEMINI_API_KEY = "YOUR-API-KEY"
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
 else:
